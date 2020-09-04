@@ -8,13 +8,15 @@ public class HealthManager : MonoBehaviour
     public int currentHP = 20;
 
     [SerializeField] Animator animator = null;
-    [SerializeField] GameObject particles = null;
 
     private void Start()
     {
         currentHP = maxHP;
         if (gameObject.tag.Equals("Player") && GameManager.instance != null)
+        {
             GameManager.instance.healthText.text = currentHP.ToString();
+            GameManager.instance.heartAnimator.SetFloat("heartbeat", 1);
+        }
     }
 
     public void TakeDamage(int damage)
@@ -27,11 +29,6 @@ public class HealthManager : MonoBehaviour
                 StartCoroutine(Die());
             else
                 GameManager.instance.KillPlayer();
-
-            if (particles != null)
-            {
-                Destroy(Instantiate(particles, transform.position, Quaternion.identity), 20f);
-            }
         }
 
         if (animator != null)
@@ -42,6 +39,10 @@ public class HealthManager : MonoBehaviour
         {
             GameManager.instance.healthText.text = currentHP.ToString();
             AudioManager.instance.Play("Hit Player");
+            if (currentHP <= maxHP / 3)
+                GameManager.instance.heartAnimator.SetFloat("heartbeat", 5);
+            else if(currentHP <= maxHP/1.5)
+                GameManager.instance.heartAnimator.SetFloat("heartbeat", 2.5f);
         }
         else
             AudioManager.instance.Play("Hit Enemy");

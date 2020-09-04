@@ -8,6 +8,8 @@ public class Proyectile : MonoBehaviour
     [SerializeField] float speed = 5;
     [SerializeField] int damage = 10;
     [SerializeField] TypeOfBullet bulletType = TypeOfBullet.FollowPlayer;
+    [SerializeField] GameObject particles = null;
+
 
     public enum TypeOfBullet
     {
@@ -37,6 +39,10 @@ public class Proyectile : MonoBehaviour
         if (collision.gameObject.tag.Equals("Player") || collision.gameObject.tag.Equals("Enemy"))
         {
             collision.gameObject.GetComponent<HealthManager>().TakeDamage(damage);
+            if (particles != null)
+            {
+                Destroy(Instantiate(particles, transform.position, Quaternion.identity), 20f);
+            }
         }
         Destroy(gameObject);
     }

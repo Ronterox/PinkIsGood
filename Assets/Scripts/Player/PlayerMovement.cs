@@ -9,23 +9,27 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Animator animator = null;
     private Vector2 moveInput;
     [SerializeField] bool isFacingRight;
+    private bool isWalking;
     private void Update()
     {
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
 
-        if (animator != null)
+        if (rgbdy.velocity.x != 0 || rgbdy.velocity.y != 0)
+            isWalking = true;
+        else if (isWalking)
         {
-            if (rgbdy.velocity.x != 0 || rgbdy.velocity.y != 0)
-                animator.SetBool("isWalking", true);
-            else
-                animator.SetBool("isWalking", false);
+            isWalking = false;
+            AudioManager.instance.Play("Step");
         }
 
         if (moveInput.x > 0 && !isFacingRight)
             Flip();
         else if (moveInput.x < 0 && isFacingRight)
             Flip();
+
+        if (animator != null)
+            animator.SetBool("isWalking", isWalking);
 
     }
 

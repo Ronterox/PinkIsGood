@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI healthText = null;
     [SerializeField] HealthManager playerHealth = null;
+    public Animator heartAnimator = null;
 
     [SerializeField] float resetTime = 5;
     [SerializeField] float timer = 0;
