@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4924263230743594411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6576184178574089716}
+  - component: {fileID: 7109078229672674591}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6576184178574089716
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4924263230743594411}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.8943274, y: 1.4897797, z: -63.26432}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7109078229672674591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4924263230743594411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6973c13cb7d261249847c08c1450df96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Player Attack
+    clip: {fileID: 8300000, guid: f9dd9f349c8438442aa8bc87afcad7ac, type: 3}
+    pitch: 1
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Monster Attack
+    clip: {fileID: 8300000, guid: 5c44278166288ff48b5a1f9a43c628af, type: 3}
+    pitch: 1
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Repeal
+    clip: {fileID: 8300000, guid: c4b46251a255a04448eddbaf92194c75, type: 3}
+    pitch: 1
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Hit Enemy
+    clip: {fileID: 8300000, guid: 44e714794f98c2d4999c430cf6864890, type: 3}
+    pitch: 1
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Hit Player
+    clip: {fileID: 8300000, guid: 5f1ff0485e1d8ed44b2ea44479a453b1, type: 3}
+    pitch: 1
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Player Fall
+    clip: {fileID: 8300000, guid: 3faf9f58a13436645a5683c186ca7e81, type: 3}
+    pitch: 1
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Door
+    clip: {fileID: 8300000, guid: 15fffdeee154e4c478599a52b7051d67, type: 3}
+    pitch: 1
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
