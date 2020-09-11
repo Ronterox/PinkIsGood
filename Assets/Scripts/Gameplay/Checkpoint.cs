@@ -12,7 +12,12 @@ public class Checkpoint : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (lastCheckpoint)
+        {
             DataManager.instance.gameCompleted = true;
+            AudioManager.instance.isThemePlaying = false;
+            AudioManager.instance.Stop("Combat");
+            AudioManager.instance.Play("Victory No Loop", 1);
+        }
 
         if (useSpecific)
             newCheckpoint = specificCheckpoint;

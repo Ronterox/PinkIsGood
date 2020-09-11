@@ -20,6 +20,14 @@ public class LevelVariables : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         monstersHolder.SetActive(true);
+
+        AudioManager.instance.Play("Plate");
+        if (!AudioManager.instance.isThemePlaying)
+        {
+            AudioManager.instance.isThemePlaying = true;
+            AudioManager.instance.Play("Combat", 1);
+        }
+
         Destroy(gameObject);
     }
 }

@@ -92,3 +92,28 @@ MonoBehaviour:
     volume: 1
     loop: 0
     source: {fileID: 0}
+  - name: Plate
+    clip: {fileID: 8300000, guid: a4729a04fb6337e4b8dc391b6dde906c, type: 3}
+    pitch: 1
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Victory
+    clip: {fileID: 8300000, guid: de37a8f3e30460045b896130304683a8, type: 3}
+    pitch: 1
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Combat
+    clip: {fileID: 8300000, guid: 3505a237970b74748bf6745a2ba232cc, type: 3}
+    pitch: 1
+    volume: 0.5
+    loop: 1
+    source: {fileID: 0}
+  - name: Victory No Loop
+    clip: {fileID: 8300000, guid: de37a8f3e30460045b896130304683a8, type: 3}
+    pitch: 1
+    volume: 0.5
+    loop: 0
+    source: {fileID: 0}
+  isThemePlaying: 0

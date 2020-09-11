@@ -6,8 +6,11 @@ public class QuitDoor : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Quit Game");
-        DataManager.instance.SaveProgress();
-        Application.Quit();
+        if (collision.CompareTag("Player"))
+        {
+            Debug.Log("Quit Game");
+            DataManager.instance.SaveProgress();
+            Application.Quit();
+        }
     }
 }

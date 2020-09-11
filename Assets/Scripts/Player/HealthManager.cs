@@ -43,6 +43,7 @@ public class HealthManager : MonoBehaviour
                 GameManager.instance.heartAnimator.SetFloat("heartbeat", 5);
             else if(currentHP <= maxHP/1.5)
                 GameManager.instance.heartAnimator.SetFloat("heartbeat", 2.5f);
+            FindObjectOfType<Camera>().GetComponent<Animator>().SetTrigger("Shake");
         }
         else
             AudioManager.instance.Play("Hit Enemy");

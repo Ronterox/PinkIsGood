@@ -10,7 +10,7 @@ public class PlayerAttack : MonoBehaviour
 
     [SerializeField] float knockForce = 5;
 
-    [SerializeField] GameObject particles = null;
+    [SerializeField] Animator attackAnimator = null;
 
     private void Update()
     {
@@ -18,8 +18,8 @@ public class PlayerAttack : MonoBehaviour
         {
             AudioManager.instance.Play("Player Attack");
             Repel();
-            if (particles != null)
-                Destroy(Instantiate(particles, attackPoint.position, Quaternion.identity), 0.15f);
+            if (attackAnimator != null)
+                attackAnimator.SetTrigger("Attack");
         }
     }
 

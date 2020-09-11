@@ -6,6 +6,9 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] Sound[] sounds = null;
     public static AudioManager instance = null;
+    [HideInInspector]
+    public bool isThemePlaying = false;
+
     private void Awake()
     {
         if (MakeSingleton())
@@ -44,6 +47,16 @@ public class AudioManager : MonoBehaviour
             return;
         }
         Debug.LogWarning("Couldn't find sound with name " + name);
+    }
+
+    public void Play(string name, float secs)
+    {
+        IEnumerator WaitForSecsPlayTheme()
+        {
+            yield return new WaitForSeconds(secs);
+            Play(name);
+        }
+        StartCoroutine(WaitForSecsPlayTheme());
     }
 
     public void Stop(string name)

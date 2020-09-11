@@ -19,6 +19,11 @@ public class Door : MonoBehaviour
             {
                 lastCheckpoint = GameManager.instance.lastCheckpoint;
                 Destroy(GameManager.instance.gameObject);
+                if (AudioManager.instance.isThemePlaying)
+                {
+                    AudioManager.instance.Stop("Combat");
+                    AudioManager.instance.isThemePlaying = false;
+                }
             }
         }
         if (isOpen)
@@ -27,7 +32,7 @@ public class Door : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (isOpen && collision.gameObject.tag.Equals("Player"))
+        if (isOpen && collision.gameObject.CompareTag("Player"))
         {
             if (GameManager.instance != null)
                 GameManager.instance.LoadNextLevel();

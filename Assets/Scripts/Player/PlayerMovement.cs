@@ -10,8 +10,27 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveInput;
     [SerializeField] bool isFacingRight;
     private bool isWalking;
+
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (DataManager.instance.gameCompleted)
+            {
+                if (animator != null) animator.SetBool("isDancing", true);
+                if (AudioManager.instance.isThemePlaying)
+                    AudioManager.instance.Stop("Combat");
+                AudioManager.instance.Play("Victory");
+            }
+        } 
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            if (animator != null) animator.SetBool("isDancing", false);
+            if (AudioManager.instance.isThemePlaying)
+                AudioManager.instance.Play("Combat");
+            AudioManager.instance.Stop("Victory");
+        }
+
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
 

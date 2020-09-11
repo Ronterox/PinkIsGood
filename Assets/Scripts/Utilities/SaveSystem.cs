@@ -8,7 +8,7 @@ public static class SaveSystem
     public static void SaveGame(PlayerData data)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/pinkisgood.1";
+        string path = Application.persistentDataPath + "/player.data";
         FileStream stream = new FileStream(path, FileMode.Create);
 
         formatter.Serialize(stream, data);
@@ -17,7 +17,7 @@ public static class SaveSystem
 
     public static PlayerData LoadGame()
     {
-        string path = Application.persistentDataPath + "/pinkisgood.1";
+        string path = Application.persistentDataPath + "/player.data";
 
         if (File.Exists(path))
         {

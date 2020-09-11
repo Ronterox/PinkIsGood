@@ -36,7 +36,7 @@ public class Proyectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag.Equals("Player") || collision.gameObject.tag.Equals("Enemy"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<HealthManager>().TakeDamage(damage);
             if (particles != null)
