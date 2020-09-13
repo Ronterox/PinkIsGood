@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 3191764757737565628}
   - component: {fileID: 7505172361372765312}
   - component: {fileID: 1524302101999980872}
-  - component: {fileID: 6910032912091828802}
+  - component: {fileID: 490149190357798015}
   m_Layer: 10
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_RenderPostProcessing: 1
   m_Antialiasing: 0
@@ -202,7 +202,7 @@ Animator:
   m_GameObject: {fileID: 3191764757737565629}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e07a5c7edf8fb8742ba29ec1324dc9a7, type: 2}
+  m_Controller: {fileID: 9100000, guid: ac0887f39d0f62b4a86a30d02e9467e7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -211,7 +211,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6910032912091828802
+--- !u!114 &490149190357798015
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,7 +227,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 477543f46e966994791ade88193dc695, type: 2}
+  sharedProfile: {fileID: 11400000, guid: fcb1426b3a3853b458172117521c620e, type: 2}
 --- !u!1 &3813141588283355423
 GameObject:
   m_ObjectHideFlags: 0
