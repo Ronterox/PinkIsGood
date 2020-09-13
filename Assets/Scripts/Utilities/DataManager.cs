@@ -9,6 +9,7 @@ public class DataManager : MonoBehaviour
     [SerializeField] SpeedAlterer speedAlterer = null;
     [SerializeField] PlayerMovement player = null;
     public bool gameCompleted = false;
+    public float playerSpeed;
 
     [SerializeField] Animator animator = null;
 
@@ -66,6 +67,8 @@ public class DataManager : MonoBehaviour
 
         if (player == null)
             player = FindObjectOfType<PlayerMovement>();
+
+        playerSpeed = player.speed;
 
         PlayerData data = new PlayerData(player.speed, checkpoint, gameCompleted);
         SaveSystem.SaveGame(data);

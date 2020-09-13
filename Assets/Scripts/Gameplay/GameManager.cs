@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] float resetTime = 5;
     [SerializeField] float timer = 0;
 
+    [SerializeField] PlayerMovement playerMovement = null;
+
     public int lastCheckpoint = 0;
 
     public int totalEnemies;
@@ -24,6 +26,26 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         MakeSingleton();
+    }
+
+    private void Update()
+    {
+        CheckResetButton();
+
+        if (playerHealth == null || playerMovement == null)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                if (playerHealth == null)
+                    playerHealth = player.GetComponent<HealthManager>();
+                if (playerMovement == null)
+                {
+                    playerMovement = player.GetComponent<PlayerMovement>();
+                    playerMovement.speed = DataManager.instance.playerSpeed;
+                }
+            }
+        }
     }
 
     private void MakeSingleton()
@@ -36,18 +58,6 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-        }
-    }
-
-    private void Update()
-    {
-        CheckResetButton();
-
-        if (playerHealth == null)
-        {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            if (player != null)
-                playerHealth = player.GetComponent<HealthManager>();
         }
     }
 

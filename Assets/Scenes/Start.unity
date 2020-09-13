@@ -542,10 +542,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6abf3cf35aea64c91dfe674022726d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedBonus: 5
-  positive: 0
-  speedText: {fileID: 1094194791}
-  player: {fileID: 4491390340234666411, guid: 99cef6e3eb7480f43a92d0ed2a7cd34a, type: 3}
+  speedBonus: -5
+  speedTextValue: {fileID: 1094194791}
+  player: {fileID: 1243001143}
 --- !u!61 &126213665
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2202,8 +2201,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 1754692372}
   speedAlterer: {fileID: 2116052934}
-  player: {fileID: 4491390340234666411, guid: 99cef6e3eb7480f43a92d0ed2a7cd34a, type: 3}
+  player: {fileID: 1243001143}
   gameCompleted: 0
+  playerSpeed: 0
   animator: {fileID: 431354510}
 --- !u!4 &431354509
 Transform:
@@ -5518,7 +5518,7 @@ GameObject:
   - component: {fileID: 1094194792}
   - component: {fileID: 1094194791}
   m_Layer: 5
-  m_Name: Speed
+  m_Name: Speed Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5894,6 +5894,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220862526}
   m_CullTransparentMesh: 0
+--- !u!114 &1243001143 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4491390340234666411, guid: 99cef6e3eb7480f43a92d0ed2a7cd34a, type: 3}
+  m_PrefabInstance: {fileID: 138873264}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed284a4f26a9bdc498192b9a40e578b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1657955730
 GameObject:
   m_ObjectHideFlags: 0
@@ -7257,9 +7268,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedBonus: 5
-  positive: 1
-  speedText: {fileID: 1094194791}
-  player: {fileID: 4491390340234666411, guid: 99cef6e3eb7480f43a92d0ed2a7cd34a, type: 3}
+  speedTextValue: {fileID: 1094194791}
+  player: {fileID: 1243001143}
 --- !u!61 &2116052935
 BoxCollider2D:
   m_ObjectHideFlags: 0
